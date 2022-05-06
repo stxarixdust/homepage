@@ -1,13 +1,9 @@
 <template>
   <div>
+    <TopHeader/>
+    <Nuxt/>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'IndexPage'
-}
-</script>
 
 <style lang="scss">
   body {
