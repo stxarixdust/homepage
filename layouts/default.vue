@@ -12,7 +12,11 @@
     font-size: 18px;
     font-family: "Apoc LC Trial Light";
   }
-  h1{
+  ::selection {
+    color: #DFE6E9;
+    background: black;
+  }
+  h1 {
     font-family: "Attack Type";
     font-weight: 500;
     font-size: 91.13px;
@@ -20,9 +24,34 @@
     line-height: 85%;
     margin: 0;
   }
-  p{
+  p {
     line-height: 1.6;
     margin: 0;
     text-align: justify;
+  }
+  .button {
+    background: rgba(#9288C2, .11);
+    border: 1px solid rgba(#9288C2, .33);
+    padding: 16px 12px;
+    box-sizing: border-box;
+    width: fit-content;
+    user-select: none;
+    cursor: pointer;
+    transition: 120ms;
+    &:hover{
+      background: rgba(#9288C2, .22);
+    }
+    &.primary{
+      font-family: "Apoc LC Trial Dark";
+      background: #4521E6;
+      color: #DFE6E9;
+      &:hover{
+        background: rgba(#4521E6, .66);
+      }
+    }
+    &.fixedWidth{
+      text-align: center;
+      padding: 16px 0px;
+    }
   }
 </style>
