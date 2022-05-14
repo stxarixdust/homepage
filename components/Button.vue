@@ -1,10 +1,11 @@
 <template>
   <div
     class="button"
-    :class="{primary: primary, fixedWidth: width != 0}"
-    :style="width != 0 ? ('width: '+width) : ''"
+    :class="{primary: primary, fixedWidth: width != ''}"
+    :style="width != '' ? ('width: '+width) : ''"
   >
-    <slot></slot>
+    <span><slot></slot></span>
+    <ExternalLink v-if="external"/>
   </div>
 </template>
 
@@ -12,9 +13,10 @@
 export default {
   props:{
     primary: Boolean,
+    external: Boolean,
     width: {
-      default: 0,
-      type: Number
+      default: "",
+      type: String
     }
   }
 }

@@ -3,9 +3,12 @@
     <div class="header-inner">
       <div class="hidden-spacer"/>
       <div class="top-logo">
-        <AriLogo/>
+        <NuxtLink to="/"><AriLogo/></NuxtLink>
       </div>
-      <nav class="nav">
+      <nav
+        class="nav"
+        :style="{opacity: displayNav ? '1' : '0'}"
+      >
         <NuxtLink to="/#projekte" class="nav-el">
           Projekte
         </NuxtLink>
@@ -26,6 +29,12 @@
 <script>
 export default {
   name: 'TopHeader',
+  props: {
+    displayNav: {
+      type: Boolean,
+      default: false
+    },
+  }
 }
 </script>
 
@@ -37,7 +46,7 @@ export default {
     position: fixed;
     padding-top: 8px;
     padding-bottom: 8px;
-    background: #DFE6E9;
+    z-index: 2;
   }
   .header-inner{
     display: grid;
@@ -61,6 +70,7 @@ export default {
     display: flex;
     gap: 32px;
     justify-content: right;
+    transition: opacity 80ms ease;
     .nav-el {
       width: 96px;
       display: block;
